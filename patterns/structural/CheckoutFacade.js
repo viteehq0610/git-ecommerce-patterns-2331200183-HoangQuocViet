@@ -22,7 +22,7 @@ class CheckoutFacade {
             console.log('Out of stock');
             return;
         }
-        const payment = this.paymentService.processPayment(orderDetails.userId, 100);
+        const payment = this.paymentService.processPayment(orderDetails.userId, orderDetails.amount);
         if (!payment) {
             console.log('Payment failed');
             return;
